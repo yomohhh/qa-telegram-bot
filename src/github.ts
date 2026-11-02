@@ -26,8 +26,6 @@ export async function getLatestRun(): Promise<WorkflowRun | null> {
         "X-GitHub-Api-Version": "2022-11-28",
     };
 
-    // Токен необязателен для публичного репозитория, но без него лимит
-    // GitHub API ниже (60 запросов в час с одного IP). Для личного бота хватает.
     const token = process.env.GITHUB_TOKEN;
     if (token) {
         headers.Authorization = `Bearer ${token}`;

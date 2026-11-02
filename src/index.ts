@@ -10,13 +10,12 @@ if (!token) {
 
 const bot = new Bot(token);
 
-// Публичные команды: доступны всем
+
 bot.command("start", (ctx) => ctx.reply("Bot is alive"));
 bot.command("status", statusHandler);
 
-// Защищённая команда: только владелец (позже здесь будет /run)
-bot.command("secret", requireOwner, (ctx) =>
-    ctx.reply("Ты владелец, доступ есть ✅")
+bot.command("report", (ctx) =>
+    ctx.reply("Allure-отчёт: https://yomohhh.github.io/QA_Project/")
 );
 
 bot.start();
